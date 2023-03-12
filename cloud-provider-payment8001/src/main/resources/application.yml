@@ -1,0 +1,54 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db2019?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8
+    username: root
+    password: 123456
+    #zookeeper注册中心
+  cloud:
+#    zookeeper:
+#      connect-string: 192.168.146.128:2181,192.168.146.128:2182,192.168.146.128:2183
+    consul:
+      host: 192.168.146.128
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: 192.168.146.128:9092         #Kafka的消息中间件服务器
+#          zk-nodes: 192.168.146.128:2181        #Zookeeper的节点，如果集群，后面加,号分隔
+#          auto-create-topics: true        #如果设置为false,就不会自动创建Topic 有可能你Topic还没创建就直接调用了。
+#      bindings:
+#        input:      #这里用stream给我们提供的默认output，后面会讲到自定义output
+#          destination: stream-demo    #消息发往的目的地
+#          content-type: application/json    #消息发送的格式，接收端不用指定格式，但是发送端要
+#          group: group
+#      instanceCount: 2
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zict.entity
+
+#eureka注册中心
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://172.20.10.5:7001/eureka
+#    register-with-eureka: true
+#    fetch-registry: true #是否从eureka抓取已有的注册信息，单节点无所谓，集群必须配置，才能配合ribbon负载均衡
+#  instance:
+#    instance-id: payment8001
+#    prefer-ip-address: true
+#ribbon:
+#  ReadTimeout: 5000
+#    ConnectTimeout: 5000
+logging:
+  level:
+    #feign日志以什么级别监控哪个接口
+    com.zict: debug
+

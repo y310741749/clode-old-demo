@@ -1,0 +1,37 @@
+server:
+  port: 83
+
+spring:
+  application:
+      name: nacos_payment_consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #nacos地址
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        #group: TEST_GROUP
+        #namespace: 344e1a7f-0e99-48ae-875c-32f57cb8c551
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #sentinel dashboard地址
+        port: 8719 #默认8719端口，如被占用+1直至找到为占用的端口
+      datasource:
+        dsl:
+          nacos:
+            server-addr: localhost:8848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #监控
+feign:
+  sentinel:
+    enabled: true

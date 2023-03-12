@@ -1,0 +1,7 @@
+com\zict\CloudConsumerOrder80Application.class
+com\zict\config\ApplicationContextConfig.class
+com\myRule\MySelfRule.class
+com\zict\lb\MyLoadBalancer.class
+com\zict\lb\impl\MyLoadBalancerImpl.class
+com\zict\facade\PaymentService.class
+com\zict\controller\OrderController.class

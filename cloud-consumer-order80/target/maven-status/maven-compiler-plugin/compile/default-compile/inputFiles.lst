@@ -1,0 +1,7 @@
+D:\项目\parent\cloud-consumer-order80\src\main\java\com\myRule\MySelfRule.java
+D:\项目\parent\cloud-consumer-order80\src\main\java\com\zict\config\ApplicationContextConfig.java
+D:\项目\parent\cloud-consumer-order80\src\main\java\com\zict\facade\PaymentService.java
+D:\项目\parent\cloud-consumer-order80\src\main\java\com\zict\lb\MyLoadBalancer.java
+D:\项目\parent\cloud-consumer-order80\src\main\java\com\zict\lb\impl\MyLoadBalancerImpl.java
+D:\项目\parent\cloud-consumer-order80\src\main\java\com\zict\CloudConsumerOrder80Application.java
+D:\项目\parent\cloud-consumer-order80\src\main\java\com\zict\controller\OrderController.java

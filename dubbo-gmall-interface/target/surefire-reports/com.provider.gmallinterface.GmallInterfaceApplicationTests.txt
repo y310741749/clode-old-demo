@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.provider.gmallinterface.GmallInterfaceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.875 s <<< FAILURE! - in com.provider.gmallinterface.GmallInterfaceApplicationTests
+com.provider.gmallinterface.GmallInterfaceApplicationTests  Time elapsed: 0.871 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+
